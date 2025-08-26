@@ -117,6 +117,8 @@ disableHugoGeneratorInject = false
   # plausibleDataDomain = 'test.com'
   # plausibleScriptSource = 'https://plausible.io/js/script.js'
 
+  listSort = "date"  # or "alpha"
+
   [params.author]
     name = "Jane Doe"
 
