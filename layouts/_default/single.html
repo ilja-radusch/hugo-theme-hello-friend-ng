@@ -2,10 +2,10 @@
     <main class="post">
 
         <div class="post-info">
-            {{ if .IsTranslated }}
+            {{ if and .IsTranslated ( not .Site.Params.EnableGlobalLanguageMenu )}}
                 {{ i18n "postAvailable" }}
                 {{ range .Translations }}
-                    <a href="{{ .Permalink }}"><span class="flag fi fi-{{ index $.Site.Data.langFlags (.Lang) }}"></span></a>
+                    <a href="{{ .RelPermalink }}"><span class="flag fi fi-{{ index $.Site.Data.langFlags ( .Lang ) }}" title="{{ .Lang }}"></span></a>
                 {{ end}}
             {{ end }}
             </p>

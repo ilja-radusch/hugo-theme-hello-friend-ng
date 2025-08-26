@@ -2,17 +2,17 @@
     <ul class="menu__inner">
         {{- $currentPage := . -}}
         {{ range sort .Site.Menus.main ".Identifier" -}}
-            <li><a href="{{ .URL | relLangURL }}">{{ .Name }}</a></li>
+            <li><a href="{{ .URL }}">{{ .Name }}</a></li>
         {{- end }}
 
         {{- if and hugo.IsMultilingual .Site.Params.EnableGlobalLanguageMenu }}
         <ul class="submenu">
             <li class="dropdown">
-                <a href="javascript:void(0)" class="dropbtn">{{ or .Language.LanguageName .Language.Lang }}</a>
+                <a href="javascript:void(0)" class="dropbtn">{{ or .Language.Lang }}</a>
 		{{ with $.Translations }}
                 <div class="dropdown-content">
 		{{ range sort . "Language.Weight" }}
-		    <a href="{{ .RelPermalink }}">{{ or .Language.LanguageName .Language.Lang }}</a>
+		    <a class="small" href="{{ .Permalink }}">{{ or .Language.LanguageName .Language.Lang }}</a>
 		{{ end }}
                 </div>
 		{{- end }}
