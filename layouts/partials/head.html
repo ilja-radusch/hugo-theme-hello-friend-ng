@@ -10,13 +10,14 @@
 <meta name="robots" content="noodp" />
 <meta name="theme-color" content="{{ .Site.Params.themeColor }}" />
 <link rel="canonical" href="{{ .Permalink }}" />
-
 {{ block "title" . }}
+    {{ $site_title := i18n "siteTitle" | default $.Site.Title }}
+    {{ $sub_title := i18n "homeSubtitle" | default $.Site.Params.Subtitle }}
     <title>
         {{ if .IsHome }}
-            {{ $.Site.Title }} {{ with $.Site.Params.Subtitle }} — {{ . }} {{ end }}
+            {{ $site_title }} {{ with $sub_title }} — {{ . }} {{ end }}
         {{ else }}
-            {{ .Title }} :: {{ $.Site.Title }} {{ with $.Site.Params.Subtitle }} — {{ . }}{{ end }}
+            {{ .Title }} :: {{ $site_title }} {{ with $sub_title }} — {{ . }}{{ end }}
         {{ end }}
     </title>
 {{ end }}
@@ -30,7 +31,13 @@
 
 {{ range $val := $.Site.Params.customCSS }}
     {{ if gt (len $val) 0 }}
-        <link rel="stylesheet" type="text/css" href="{{ $val }}">
+	{{ $css := resources.Get $val }}
+        {{ if $css }}
+            <link rel="stylesheet" type="text/css" href="{{ $css.Permalink | relURL }}">
+        {{ else }}
+            <!-- Fallback for cases where the resource is not found -->
+            <link rel="stylesheet" type="text/css" href="{{ $val }}">
+        {{ end }}
     {{ end }}
 {{ end }}
 
@@ -53,14 +60,15 @@
 {{ end }}
 
 <!-- RSS -->
+{{ $title := default ( i18n "siteTitle" | default $.Site.Title ) .Title }}
 {{ with .OutputFormats.Get "rss" -}}
-    {{ printf `<link rel="%s" type="%s" href="%s" title="%s" />` .Rel .MediaType.Type .Permalink $.Site.Title | safeHTML }}
+    {{ printf `<link rel="%s" type="%s" href="%s" title="%s" />` .Rel .MediaType.Type .Permalink $title | safeHTML }}
 {{ end -}}
 
 <!-- JSON Feed -->
 {{ if .OutputFormats.Get "json" }}
 <link href="{{ if .OutputFormats.Get "json" }}{{ .Site.BaseURL }}feed.json{{ end }}" rel="alternate"
-    type="application/json" title="{{ .Site.Title }}" />
+    type="application/json" title="{{ $title }}" />
 {{ end }}
 
 <!-- Custom head tags -->
