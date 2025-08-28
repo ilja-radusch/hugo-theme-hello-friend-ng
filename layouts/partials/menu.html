@@ -8,7 +8,7 @@
         {{- if and hugo.IsMultilingual .Site.Params.EnableGlobalLanguageMenu }}
         <ul class="submenu">
             <li class="dropdown">
-                <a href="javascript:void(0)" class="dropbtn">{{ or .Language.Lang }}</a>
+                <a href="javascript:void(0)" class="dropbtn">{{ index ( split ( or .Language.Lang .Site.Language.Lang ) "-" | first 1 ) 0 | upper }}</a>
 		{{ with $.Translations }}
                 <div class="dropdown-content">
 		{{ range sort . "Language.Weight" }}
