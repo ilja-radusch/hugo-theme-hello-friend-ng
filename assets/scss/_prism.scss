@@ -11,7 +11,7 @@ pre[class*="language-"] {
 	background: none;
 	font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
 	font-size: 1em;
-	text-align: left;
+	text-align: start;
 	text-shadow: 0 -.1em .2em black;
 	white-space: pre;
 	word-spacing: normal;
@@ -309,7 +309,7 @@ pre[class*="language-"].line-numbers > code {
 			color: #999;
 			display: block;
 			padding-right: 0.8em;
-			text-align: right;
+			text-align: end;
 		}
 
 div.code-toolbar {

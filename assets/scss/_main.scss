@@ -199,7 +199,7 @@ figure {
     opacity: 0.8;
 
     &.left {
-      text-align: left;
+      text-align: start;
     }
 
     &.center {
@@ -207,7 +207,7 @@ figure {
     }
 
     &.right {
-      text-align: right;
+      text-align: end;
     }
   }
 }
