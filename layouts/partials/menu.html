@@ -1,9 +1,11 @@
 <nav class="menu">
     <ul class="menu__inner">
         {{- $currentPage := . -}}
-        {{ range sort .Site.Menus.main ".Identifier" -}}
+	{{ if .Site.Menus.main }}
+	    {{ range sort .Site.Menus.main ".Identifier" -}}
             <li><a href="{{ .URL }}">{{ .Name }}</a></li>
-        {{- end }}
+	    {{- end }}
+        {{ end }}
 
         {{- if and hugo.IsMultilingual .Site.Params.EnableGlobalLanguageMenu }}
         <ul class="submenu">
