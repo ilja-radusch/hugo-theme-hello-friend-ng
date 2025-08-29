@@ -17,7 +17,7 @@
 		{{ with $.Translations }}
                 <div class="dropdown-content">
 		{{ range sort . "Language.Weight" }}
-		    <a href="{{ .Permalink }}">{{ or .Language.LanguageName .Language.Lang }}</a>
+		    <a href="{{ .Permalink }}" dir="{{ .Language.LanguageDirection }}">{{ or .Language.LanguageName .Language.Lang }}</a>
 		{{ end }}
                 </div>
 		{{- end }}

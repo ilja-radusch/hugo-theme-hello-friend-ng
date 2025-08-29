@@ -11,7 +11,7 @@
         <div class="container">
             {{ partial "header.html" . }}
 
-            <div class="content">
+            <div class="content" dir="{{ or .Language.LanguageDirection .Site.Language.LanguageDirection }}">
                 {{ block "main" . }}{{ end }}
             </div>
 
