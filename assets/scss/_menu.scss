@@ -137,25 +137,27 @@
   }
 
   .dropdown-content a {
-    padding: 12px 20px;
+    padding: 0.6rem 1rem;
+    margin: 0;
     text-decoration: none;
     display: block;
     text-align: left;
+    font-size: smaller;
   }
 
   .dropdown-content a:hover {
-    background: $dark-background-header;
+    color: $dark-color-variant;
     
     @media (prefers-color-scheme: light) {
-      background: $light-background-header;
+      color: $light-color-variant;
     }
 
     [data-theme=dark] & {
-      background: $dark-background-header;
+      color: $dark-color-variant;
     }
   
     [data-theme=light] & {
-      background: $light-background-header;
+      color: $light-color-variant;
     }
   }
 
