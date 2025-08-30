@@ -60,7 +60,7 @@
 {{ end }}
 
 <!-- RSS -->
-{{ $title := default ( i18n "siteTitle" | default $.Site.Title ) .Title }}
+{{ $title := or .Title ( i18n "siteTitle" | default $.Site.Title ) }}
 {{ with .OutputFormats.Get "rss" -}}
     {{ printf `<link rel="%s" type="%s" href="%s" title="%s" />` .Rel .MediaType.Type .Permalink $title | safeHTML }}
 {{ end -}}
