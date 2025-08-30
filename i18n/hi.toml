@@ -25,15 +25,22 @@ other = "क्षमा करें ! पेज़ नहीं मिला…"
 # posts/single.html
 #
 [readingTime]
-one   = "एक मिनट"
+one = "एक मिनट"
 other = "{{ .Count }} मिनट"
 
 [tableOfContents]
 other = "अनुक्रमणिका"
 
 [wordCount]
-one   = "एक शब्द"
+one = "एक शब्द"
 other = "{{ .Count }} शब्द"
 
 [lastModified]
 other = "आखरी अपडेट"
+
+# partials/pagination-list.html
+[pagination]
+newerPosts = "नवीनतम पोस्ट"
+olderPosts = "पुराने पोस्ट"
+nextPosts = "अगले पोस्ट"
+prevPosts = "पिछले पोस्ट"

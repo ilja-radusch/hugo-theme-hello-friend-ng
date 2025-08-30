@@ -25,14 +25,14 @@ other = "Ups, página não encontrada…"
 # posts/single.html
 #
 [readingTime]
-one   = "Um minuto"
+one = "Um minuto"
 other = "{{ .Count }} minutos"
 
 [tableOfContents]
 other = "Índice"
 
 [wordCount]
-one   = "Uma palavra"
+one = "Uma palavra"
 other = "{{ .Count }} palavras"
 
 [lastModified]
@@ -42,3 +42,5 @@ other = "Última atualização"
 [pagination]
 newerPosts = "Artigos mais recentes"
 olderPosts = "Artigos mais antigos"
+nextPosts = "Próximos artigos"
+prevPosts = "Publicações anteriores"

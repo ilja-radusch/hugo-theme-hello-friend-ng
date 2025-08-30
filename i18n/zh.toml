@@ -1,0 +1,35 @@
+
+[translations]
+other = "翻译"
+
+[postAvailable]
+other = "也可在此获取"
+
+[archives]
+other = "档案"
+
+[home]
+other = "首页"
+
+[notFound]
+other = "哎呀，页面未找到..."
+
+[readingTime]
+one = "一分钟"
+other = "{{ .Count }} 分钟"
+
+[tableOfContents]
+other = "目录"
+
+[wordCount]
+one = "一个词"
+other = "{{ .Count }} 个字"
+
+[lastModified]
+other = "最后更新"
+
+[pagination]
+newerPosts = "最新文章"
+olderPosts = "较早的帖子"
+nextPosts = "下一篇文章"
+prevPosts = "上一篇文章"

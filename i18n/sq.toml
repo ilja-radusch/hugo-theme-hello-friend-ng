@@ -1,0 +1,35 @@
+
+[translations]
+other = "Përkthime"
+
+[postAvailable]
+other = "Edhe i disponueshëm në"
+
+[archives]
+other = "Arkiv"
+
+[home]
+other = "Shtëpia"
+
+[notFound]
+other = "Ups, faqja nuk u gjet ..."
+
+[readingTime]
+one = "Një minutë"
+other = "{{ .Count }} minuta"
+
+[tableOfContents]
+other = "Përmbajtja"
+
+[wordCount]
+one = "Një fjalë"
+other = "{{ .Count }} fjalë"
+
+[lastModified]
+other = "Përditësimi i fundit"
+
+[pagination]
+newerPosts = "Postime të reja"
+olderPosts = "Postime më të vjetra"
+nextPosts = "Postimet e ardhshme"
+prevPosts = "Postimet e mëparshme"

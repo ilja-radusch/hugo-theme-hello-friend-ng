@@ -42,3 +42,5 @@ other = "Última actualização"
 [pagination]
 newerPosts = "Entradas mais recentes"
 olderPosts = "Entradas mais antigas"
+nextPosts = "Próximos artigos"
+prevPosts = "Publicações anteriores"

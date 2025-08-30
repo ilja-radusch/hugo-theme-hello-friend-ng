@@ -25,14 +25,14 @@ other = "Ups, pagina nu a fost găsită…"
 # posts/single.html
 #
 [readingTime]
-one   = "Un minut"
+one = "Un minut"
 other = "{{ .Count }} de minute"
 
 [tableOfContents]
 other = "Cuprins"
 
 [wordCount]
-one   = "Un cuvânt"
+one = "Un cuvânt"
 other = "{{ .Count }} de cuvinte"
 
 [lastModified]
@@ -42,3 +42,5 @@ other = "Ultima modificare"
 [pagination]
 newerPosts = "Intrări mai noi"
 olderPosts = "Intrări mai vechi"
+nextPosts = "Următoarele postări"
+prevPosts = "Contribuții anterioare"

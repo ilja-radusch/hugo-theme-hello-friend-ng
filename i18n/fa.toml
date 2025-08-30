@@ -1,0 +1,35 @@
+
+[translations]
+other = "ترجمه‌ها"
+
+[postAvailable]
+other = "همچنین در دسترس است در"
+
+[archives]
+other = "آرشیو"
+
+[home]
+other = "خانه"
+
+[notFound]
+other = "اوه، صفحه پیدا نشد ..."
+
+[readingTime]
+one = "یک دقیقه"
+other = "{{ .Count }} دقیقه"
+
+[tableOfContents]
+other = "فهرست مطالب"
+
+[wordCount]
+one = "یک کلمه"
+other = "{{ .Count }} کلمه"
+
+[lastModified]
+other = "آخرین به‌روزرسانی"
+
+[pagination]
+newerPosts = "مقالات جدید"
+olderPosts = "مقالات قدیمی"
+nextPosts = "نوشته‌های بعدی"
+prevPosts = "مقالات قبلی"

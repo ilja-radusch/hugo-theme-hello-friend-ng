@@ -25,14 +25,14 @@ other = "Sayfa bulunamadı…"
 # posts/single.html
 #
 [readingTime]
-one   = "Bir dakika"
+one = "Bir dakika"
 other = "{{ .Count }} dakika"
 
 [tableOfContents]
 other = "İçindekiler"
 
 [wordCount]
-one   = "One Kelime"
+one = "One Kelime"
 other = "{{ .Count }} Kelime"
 
 [lastModified]
@@ -42,3 +42,5 @@ other = "Son güncelleme"
 [pagination]
 newerPosts = "Daha yeni girişler"
 olderPosts = "Eski girişler"
+nextPosts = "Sonraki Gönderiler"
+prevPosts = "Önceki Gönderiler"

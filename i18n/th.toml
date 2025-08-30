@@ -1,0 +1,35 @@
+
+[translations]
+other = "การแปล"
+
+[postAvailable]
+other = "ยังมีให้บริการที่"
+
+[archives]
+other = "คลังเอกสาร"
+
+[home]
+other = "หน้าแรก"
+
+[notFound]
+other = "อุ๊บส์ ไม่พบหน้า ..."
+
+[readingTime]
+one = "หนึ่งนาที"
+other = "{{ .Count }} นาที"
+
+[tableOfContents]
+other = "สารบัญ"
+
+[wordCount]
+one = "คำหนึ่ง"
+other = "{{ .Count }} คำ"
+
+[lastModified]
+other = "การปรับปรุงล่าสุด"
+
+[pagination]
+newerPosts = "โพสต์ใหม่"
+olderPosts = "โพสต์เก่า"
+nextPosts = "โพสต์ถัดไป"
+prevPosts = "โพสต์ก่อนหน้า"

@@ -46,3 +46,5 @@ other = "Останнє оновлення"
 [pagination]
 newerPosts = "Нові записи"
 olderPosts = "Старіші записи"
+nextPosts = "Наступні дописи"
+prevPosts = "Попередні дописи"

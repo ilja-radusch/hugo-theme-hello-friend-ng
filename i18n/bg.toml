@@ -1,0 +1,35 @@
+
+[translations]
+other = "Преводи"
+
+[postAvailable]
+other = "Също налично на"
+
+[archives]
+other = "Архив"
+
+[home]
+other = "Начало"
+
+[notFound]
+other = "Упс, страницата не е намерена ..."
+
+[readingTime]
+one = "Една минута"
+other = "{{ .Count }} минути"
+
+[tableOfContents]
+other = "Съдържание"
+
+[wordCount]
+one = "Една дума"
+other = "{{ .Count }} думи"
+
+[lastModified]
+other = "Последно обновление"
+
+[pagination]
+newerPosts = "Нови публикации"
+olderPosts = "По-стари публикации"
+nextPosts = "Следващи публикации"
+prevPosts = "Предишни публикации"

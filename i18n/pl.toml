@@ -1,0 +1,35 @@
+
+[translations]
+other = "Tłumaczenia"
+
+[postAvailable]
+other = "Również dostępne na"
+
+[archives]
+other = "Archiwum"
+
+[home]
+other = "Strona główna"
+
+[notFound]
+other = "Ups, strona nie znaleziona ..."
+
+[readingTime]
+one = "Jedna minuta"
+other = "{{ .Count }} minut"
+
+[tableOfContents]
+other = "Spis treści"
+
+[wordCount]
+one = "Jedno słowo"
+other = "{{ .Count }} słów"
+
+[lastModified]
+other = "Ostatnia aktualizacja"
+
+[pagination]
+newerPosts = "Nowsze wpisy"
+olderPosts = "Starsze wpisy"
+nextPosts = "Następne wpisy"
+prevPosts = "Poprzednie wpisy"

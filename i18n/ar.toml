@@ -1,0 +1,35 @@
+
+[translations]
+other = "ترجمات"
+
+[postAvailable]
+other = "متوفر أيضًا على"
+
+[archives]
+other = "أرشيف"
+
+[home]
+other = "الرئيسية"
+
+[notFound]
+other = "عذرًا، الصفحة غير موجودة ..."
+
+[readingTime]
+one = "دقيقة واحدة"
+other = "{{ .Count }} دقيقة"
+
+[tableOfContents]
+other = "فهرس المحتويات"
+
+[wordCount]
+one = "كلمة"
+other = "{{ .Count }} كلمة"
+
+[lastModified]
+other = "آخر تحديث"
+
+[pagination]
+newerPosts = "مشاركات جديدة"
+olderPosts = "المشاركات القديمة"
+nextPosts = "المشاركات القادمة"
+prevPosts = "المشاركات السابقة"
