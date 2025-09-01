@@ -10,78 +10,77 @@
 <meta name="robots" content="noodp" />
 <meta name="theme-color" content="{{ .Site.Params.themeColor }}" />
 <link rel="canonical" href="{{ .Permalink }}" />
-{{ block "title" . }}
-    {{ $site_title := i18n "siteTitle" | default $.Site.Title }}
-    {{ $sub_title := i18n "homeSubtitle" | default $.Site.Params.Subtitle }}
+{{ block "title" . -}}
+    {{- $site_title := i18n "siteTitle" | default $.Site.Title -}}
+    {{- $sub_title := i18n "homeSubtitle" | default $.Site.Params.Subtitle -}}
     <title>
-        {{ if .IsHome }}
-            {{ $site_title }} {{ with $sub_title }} — {{ . }} {{ end }}
-        {{ else }}
-            {{ .Title }} :: {{ $site_title }} {{ with $sub_title }} — {{ . }}{{ end }}
-        {{ end }}
+        {{- if .IsHome -}}
+            {{- $site_title }} {{- with $sub_title }} — {{ . -}}{{- end -}}
+        {{- else -}}
+            {{- .Title }} :: {{ $site_title }} {{- with $sub_title }} — {{ . -}}{{ end -}}
+        {{- end -}}
     </title>
-{{ end }}
+{{- end }}
 
 <!-- CSS -->
-{{ $opts := dict "transpiler" "libsass" "targetPath" "main.css" "outputStyle" "compressed" "enableSourceMap" true }}
-{{ with resources.Get "scss/main.scss" | toCSS $opts | minify | fingerprint }}
+{{- $opts := dict "transpiler" "libsass" "targetPath" "main.css" "outputStyle" "compressed" "enableSourceMap" true -}}
+{{ with resources.Get "scss/main.scss" | toCSS $opts | minify | fingerprint -}}
   <link rel="stylesheet" href="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}" crossorigin="anonymous">
-{{ end }}
+{{- end }}
 
-
-{{ range $val := $.Site.Params.customCSS }}
-    {{ if gt (len $val) 0 }}
-	{{ $css := resources.Get $val }}
-        {{ if $css }}
-            <link rel="stylesheet" type="text/css" href="{{ $css.Permalink | relURL }}">
-        {{ else }}
+{{ range $val := $.Site.Params.customCSS -}}
+    {{- if gt (len $val) 0 -}}
+	{{- $css := resources.Get $val | minify | fingerprint -}}
+        {{- with $css -}}
+            <link rel="stylesheet" type="text/css" href="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}" crossorigin="anonymous">
+        {{- else -}}
             <!-- Fallback for cases where the resource is not found -->
-            <link rel="stylesheet" type="text/css" href="{{ $val }}">
-        {{ end }}
-    {{ end }}
-{{ end }}
+            <link rel="stylesheet" type="text/css" href="{{ $val }}" crossorigin="anonymous">
+        {{- end -}}
+    {{- end -}}
+{{- end }}
 
 <!-- Icons -->
 {{- partial "favicons.html" . }}
 
-{{ partial "schema.html" . }}
-{{ partial "twitter_cards.html" . }}
+{{- partial "schema.html" . }}
+{{- partial "twitter_cards.html" . }}
 
-{{ if isset .Site.Taxonomies "series" }}
-    {{ partial "opengraph.html" . }}
-{{ end }}
+{{- if isset .Site.Taxonomies "series" -}}
+    {{- partial "opengraph.html" . }}
+{{ end -}}
 
-{{ range .Params.categories }}
+{{- range .Params.categories -}}
     <meta property="article:section" content="{{ . }}" />
-{{ end }}
+{{ end -}}
 
-{{ if isset .Params "date" }}
+{{- if isset .Params "date" -}}
     <meta property="article:published_time" content="{{ time .Date }}" />
-{{ end }}
+{{ end -}}
 
 <!-- RSS -->
-{{ $title := or .Title ( i18n "siteTitle" | default $.Site.Title ) }}
-{{ with .OutputFormats.Get "rss" -}}
-    {{ printf `<link rel="%s" type="%s" href="%s" title="%s" />` .Rel .MediaType.Type .Permalink $title | safeHTML }}
+{{- $title := or .Title ( i18n "siteTitle" | default $.Site.Title ) -}}
+{{- with .OutputFormats.Get "rss" -}}
+    {{- printf `<link rel="%s" type="%s" href="%s" title="%s" />` .Rel .MediaType.Type .Permalink $title | safeHTML }}
 {{ end -}}
 
 <!-- JSON Feed -->
-{{ if .OutputFormats.Get "json" }}
+{{- if .OutputFormats.Get "json" -}}
 <link href="{{ if .OutputFormats.Get "json" }}{{ .Site.BaseURL }}feed.json{{ end }}" rel="alternate"
     type="application/json" title="{{ $title }}" />
-{{ end }}
+{{- end -}}
 
 <!-- Custom head tags -->
 {{- with partial "extra-head.html" . -}}
     {{ . }}
-{{- end }}
+{{ end -}}
 
 <!-- Google Analytics internal template -->
-{{- if .Site.Config.Services.GoogleAnalytics.ID }}
+{{- if .Site.Config.Services.GoogleAnalytics.ID -}}
     {{ partial "google_analytics.html" . }}
-{{- end }}
+{{ end -}}
 
 <!-- Plausible.io -->
-{{- if $.Site.Params.plausibleDataDomain }}
+{{- if $.Site.Params.plausibleDataDomain -}}
     <script defer data-domain="{{ .Site.Params.plausibleDataDomain }}" src="{{ .Site.Params.plausibleScriptSource }}"></script>
-{{- end}}
+{{ end -}}
