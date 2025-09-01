@@ -44,11 +44,11 @@
 <!-- Icons -->
 {{- partial "favicons.html" . }}
 
-{{ template "_internal/schema.html" . }}
-{{ template "_internal/twitter_cards.html" . }}
+{{ partial "schema.html" . }}
+{{ partial "twitter_cards.html" . }}
 
 {{ if isset .Site.Taxonomies "series" }}
-    {{ template "_internal/opengraph.html" . }}
+    {{ partial "opengraph.html" . }}
 {{ end }}
 
 {{ range .Params.categories }}
@@ -72,13 +72,13 @@
 {{ end }}
 
 <!-- Custom head tags -->
-{{- if templates.Exists "partials/extra-head.html" -}}
-    {{ partial "extra-head.html" . }}
+{{- with partial "extra-head.html" . -}}
+    {{ . }}
 {{- end }}
 
 <!-- Google Analytics internal template -->
 {{- if .Site.Config.Services.GoogleAnalytics.ID }}
-    {{ template "_internal/google_analytics.html" . }}
+    {{ partial "google_analytics.html" . }}
 {{- end }}
 
 <!-- Plausible.io -->
