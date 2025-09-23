@@ -5,9 +5,23 @@
 {{ define "main" }}
     <main>
         <div>
-            {{ if .Site.Params.Portrait.Path }}
-               <img src="{{ .Site.Params.Portrait.Path }}" class="circle" alt="{{ .Site.Params.Portrait.Alt }}" style="max-width:{{ .Site.Params.Portrait.MaxWidth }}" />
-            {{ end }}
+	{{- $alt := or .Site.Params.Portrait.Alt .Site.Title -}}
+	{{- $max_width := or .Site.Params.Portrait.maxWidth "5rem" -}}
+	{{- with .Site.Params.Portrait.Path -}}
+	    {{- $src := . -}}
+
+	    {{- $portrait := resources.GetMatch . -}}
+	    {{- if $portrait -}}
+		{{ $src = $portrait.RelPermalink }}
+	    {{- end -}}
+
+	    {{ if $src }}
+		<img src="{{- $src -}}"
+		    class="circle"
+		    alt="{{- $alt -}}"
+		    style="max-width:{{- $max_width -}}" />
+	    {{ end }}
+	{{ end }}
 
             <h1>{{ i18n "siteTitle" | default .Site.Title }}</h1>
 
