@@ -6,7 +6,8 @@
     <main>
         <div>
 	{{- $alt := or .Site.Params.Portrait.Alt .Site.Title -}}
-	{{- $max_width := or .Site.Params.Portrait.maxWidth "5rem" -}}
+	{{- $cls := or .Site.Params.Portrait.Class "circle" -}}
+	{{- $max_width := or .Site.Params.Portrait.MaxWidth "5rem" -}}
 	{{- with .Site.Params.Portrait.Path -}}
 	    {{- $src := . -}}
 
@@ -16,9 +17,7 @@
 	    {{- end -}}
 
 	    {{ if $src }}
-		<img src="{{- $src -}}"
-		    class="circle"
-		    alt="{{- $alt -}}"
+		<img src="{{- $src -}}" class="{{- $cls -}}" alt="{{- $alt -}}"
 		    style="max-width:{{- $max_width -}}" />
 	    {{ end }}
 	{{ end }}
